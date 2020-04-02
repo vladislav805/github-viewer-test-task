@@ -1,0 +1,8 @@
+@import '../../const.scss';
+
+main {
+    @media screen and (min-width: $breakpoint-desktop) {
+        max-width: $breakpoint-desktop;
+        margin: 0 auto;
+    }
+}

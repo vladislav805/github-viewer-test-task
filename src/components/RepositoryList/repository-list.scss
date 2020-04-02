@@ -1,0 +1,12 @@
+@import '../../const.scss';
+
+.repository-list {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+        flex-flow: row wrap;
+        align-items: flex-start;
+    }
+}

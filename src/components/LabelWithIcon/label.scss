@@ -1,0 +1,10 @@
+.icon-labelled {
+    padding: 4px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    svg {
+        margin-right: 8px;
+    }
+}

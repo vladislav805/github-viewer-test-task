@@ -1,0 +1,28 @@
+@import '../../const.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: {
+        family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        size: 15px;
+    }
+
+    background: $color-root-background;
+}
+
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: $color-link;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: 1.8;
+}

@@ -1,0 +1,61 @@
+@import '../../const.scss';
+@import '../../mixins.scss';
+
+.repository-item {
+    display: flex;
+    flex-flow: row nowrap;
+
+    padding: .7em 1em;
+    margin: 0 1em 1em;
+
+    background: #ffffff;
+    box-shadow: 0 0 4px 0 rgba($color: #000000, $alpha: .2);
+    border-radius: 4px;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+        width: 48%;
+        margin: .4em .1em;
+    }
+
+    &--photo {
+        $size: 60px;
+        display: block;
+        @include size($size);
+        margin-top: .2em;
+        margin-right: 1em;
+        min-width: $size;
+        border-radius: 4px;
+    }
+
+    &--info {
+        min-width: 0;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+
+        @include ellipsis;
+    }
+
+    &--description {
+        $line-height: 1.1em;
+        position: relative;
+        line-height: $line-height;
+        overflow: hidden;
+        max-height: #{$line-height * 2};
+
+        &::after {
+            content: '';
+            display: block;
+
+            position: absolute;
+            top: $line-height;
+            right: 0;
+            width: 3em;
+            height: $line-height;
+            background: linear-gradient(to right, transparent 0%, white 50%);
+            pointer-events: none;
+        }
+    }
+}
