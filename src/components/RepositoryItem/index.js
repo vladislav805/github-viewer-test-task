@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './repository-item.scss';
 import { Link } from 'react-router-dom';
 
@@ -23,6 +24,10 @@ const RepositoryItem = ({ repository }) => {
             </div>
         </article>
     );
+};
+
+RepositoryItem.propTypes = {
+    repository: PropTypes.object,
 };
 
 export default RepositoryItem;

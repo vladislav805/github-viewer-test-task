@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './repository-content.scss';
 import { fetchRepositoryContent } from '../../github';
 import LoadableContent from '../LoadableContent';
@@ -14,6 +15,11 @@ const ItemLink = ({ repo, item, children }) => item.type === 'file'
     ? <a href={item.download_url} target="_blank" rel="noopener noreferer" className="file">{children}</a>
     : <Link to={`/${repo}/${item.path}`} className="file">{children}</Link>;
 
+ItemLink.propTypes = {
+    repo: PropTypes.string.isRequired,
+    item: PropTypes.object.isRequired,
+};
+
 const Item = ({ repo, item }) => (
     <ItemLink repo={repo} item={item}>
         <div className="file-icon">
@@ -25,7 +31,16 @@ const Item = ({ repo, item }) => (
     </ItemLink>
 );
 
+Item.propTypes = {
+    repo: PropTypes.string.isRequired,
+    item: PropTypes.object.isRequired,
+};
+
 class RepositoryContent extends React.Component {
+    static propTypes = {
+        path: PropTypes.string.isRequired,
+        items: PropTypes.arrayOf(PropTypes.object),
+    };
 
     constructor(props) {
         super(props);

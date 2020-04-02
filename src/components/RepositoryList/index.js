@@ -1,17 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './repository-list.scss';
 import RepositoryItem from '../RepositoryItem';
 
-class RepositoryList extends React.Component {
-    render() {
-        const items = this.props.items;
+const RepositoryList = ({ items }) => (
+    <div className="repository-list">
+        {items.map(repository => <RepositoryItem key={repository.id} repository={repository} />)}
+    </div>
+);
 
-        return (
-            <div className="repository-list">
-                {items.map(repository => <RepositoryItem key={repository.id} repository={repository} />)}
-            </div>
-        );
-    }
-}
+RepositoryList.propTypes = {
+    items: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default RepositoryList;

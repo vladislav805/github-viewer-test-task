@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './loading-spinner.scss';
 
 const LoadingSpinner = () => (
@@ -11,6 +12,11 @@ const LoadableContent = ({ loading, render }) => {
     return loading
         ? <LoadingSpinner />
         : render();
+};
+
+LoadableContent.propTypes = {
+    loading: PropTypes.bool,
+    render: PropTypes.func.isRequired,
 };
 
 export default LoadableContent;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './repository-page.scss';
 import { fetchRepositoryInfo } from '../../github';
 import {
@@ -16,8 +17,11 @@ import LoadableContent from '../LoadableContent';
 import { Link } from 'react-router-dom';
 import RepositoryContent from '../RepositoryContent';
 
-
 class RepositoryPage extends React.Component {
+    static propTypes = {
+        repo: PropTypes.object.isRequired,
+    };
+
     state = {
         repo: null,
     };
