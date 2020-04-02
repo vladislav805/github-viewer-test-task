@@ -1,24 +1,19 @@
-import { RepositoryListFilters, FETCH_REPO_LIST, CHANGE_REPO_FILTER } from '../constants';
+// Actions
+export const CACHE_REPO_LIST = 'CACHE_REPO_LIST';
+
+// Action creators
+export const cacheRepoList = publicRepos => ({ type: CACHE_REPO_LIST, publicRepos });
 
 const initialState = {
-    filter: RepositoryListFilters.SHOW_ALL,
-    list: [],
-    repos: {},
+    publicRepos: null,
 };
 
 const githubReducer = (state = initialState, action) => {
     switch (action.type) {
-        case FETCH_REPO_LIST: {
+        case CACHE_REPO_LIST: {
             return {
                 ...state,
-                list: action.list,
-            };
-        }
-
-        case CHANGE_REPO_FILTER: {
-            return {
-                ...state,
-                filter: action.filter,
+                publicRepos: action.publicRepos,
             };
         }
 
