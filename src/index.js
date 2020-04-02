@@ -12,6 +12,10 @@ if (!process.env.GITHUB_TOKEN) {
     throw new Error(str);
 }
 
+if (process.env.GITHUB_TOKEN === 'none') {
+    alert('The mode without token is used. Github resolves 60 requests in 2 hours. Use a token to increase the limit.');
+}
+
 const store = createStore(githubReducer);
 
 ReactDOM.render(

@@ -85,6 +85,20 @@ class RepositoryPage extends React.Component {
                     </div>
                     <h1>{repoName}</h1>
                     <p className="repository-description">{description}</p>
+                    <div className="repository-counter">
+                        <div className="repository-counter__item">
+                            <LabelWithIcon path={iconStars} label={stars} />
+                        </div>
+                        <div className="repository-counter__item">
+                            <LabelWithIcon path={iconWatchers} label={watches} />
+                        </div>
+                        <div className="repository-counter__item">
+                            <LabelWithIcon path={iconFork} label={forks} />
+                        </div>
+                        <div className="repository-counter__item">
+                            <LabelWithIcon path={iconIssues} label={issues} />
+                        </div>
+                    </div>
                     {language && <LabelWithIcon
                         path={iconLanguage}
                         label={language} />}
@@ -111,20 +125,6 @@ class RepositoryPage extends React.Component {
                             path={iconArchived}
                             label="Archived" />
                     )}
-                    <div className="repository-counter">
-                        <div className="repository-counter__item">
-                            <LabelWithIcon path={iconStars} label={stars} />
-                        </div>
-                        <div className="repository-counter__item">
-                            <LabelWithIcon path={iconWatchers} label={watches} />
-                        </div>
-                        <div className="repository-counter__item">
-                            <LabelWithIcon path={iconFork} label={forks} />
-                        </div>
-                        <div className="repository-counter__item">
-                            <LabelWithIcon path={iconIssues} label={issues} />
-                        </div>
-                    </div>
                 </div>
                 <RepositoryContent path={this.props.match.params.path || ''} repo={repoFullName} />
             </div>
